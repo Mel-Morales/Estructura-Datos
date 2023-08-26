@@ -1,0 +1,3 @@
+numero:int = 19
+print(type(numero))
+
