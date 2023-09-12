@@ -1,0 +1,45 @@
+class Meal:
+    def __init__(self):
+        self.main_course = None
+        self.side_dish = None
+
+    def __str__(self):
+        return f"Main Course: {self.main_course}, Side Dish: {self.side_dish}"
+
+class MealBuilder:
+    def __init__(self):
+        self.meal = Meal()
+
+    def set_main_course(self, main_course):
+        self.meal.main_course = main_course
+
+    def set_side_dish(self, side_dish):
+        self.meal.side_dish = side_dish
+
+    def build(self):
+        return self.meal
+
+# Crear platos principales y acompañamientos
+class Burger:
+    def __str__(self):
+        return "Burger"
+
+class Salad:
+    def __str__(self):
+        return "Salad"
+
+class Fries:
+    def __str__(self):
+        return "Fries"
+
+# Crear el objeto Meal utilizando el patrón Builder
+builder = MealBuilder()
+builder.set_main_course(Burger())
+builder.set_side_dish(Salad())
+meal = builder.build()
+
+print("Meal:", meal)
+
+
+
+
